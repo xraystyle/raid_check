@@ -5,9 +5,9 @@ require 'mail'
 # set up email creds
 # edit this with the correct creds for your mail server. 
 Mail.defaults do
-  delivery_method :smtp, { :address => "smtp.yourmailserver.com",
+  delivery_method :smtp, { :address => "smtp.example.com",
     :port => 587,
-    :domain => 'mailserver.com',
+    :domain => 'example.com',
     :user_name => 'your_username',
     :password => 'password',
     :authentication => 'plain',
@@ -37,8 +37,8 @@ end
 def send_email(error_list)
 
 	Mail.deliver do
-	    to 'youremail@domian.com'
-	    from 'fromaddress@domain.com'
+	    to 'youremail@example.com'
+	    from 'fromaddress@example.com'
 	    subject 'Raid Errors/Warnings Found On Server "SERVERNAME"'
 	    body "The following alerts were found in the last 24 hours:\n\n#{error_list}"
     end
