@@ -1,0 +1,12 @@
+raid_check is a small Ruby script that uses the 'mail' gem
+to send email notifications in the event of an error or 
+warning appearing in a 3ware RAID controller log.
+
+If you use tw_cli to manage your RAID arrays, this should
+work for you.
+
+Make sure you install the 'mail' gem, found here:
+https://github.com/mikel/mail
+
+Make sure you edit the script to add the correct credentials
+for your mail server and email addresses.
