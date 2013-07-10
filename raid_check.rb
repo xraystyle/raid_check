@@ -14,6 +14,7 @@ Mail.defaults do
     :enable_starttls_auto => true  }
 end
 
+############## Methods ##############
 
 # get the latest alarms
 def get_alarms
@@ -45,7 +46,7 @@ def send_email(error_list)
 
 end
 
-
+############## Start Script ##############
 
 
 get_alarms
@@ -55,15 +56,6 @@ find_problems(@alarm_list)
 unless @problems.empty?
 	send_email(@problems)
 end
-
-
-
-
-
-
-
-
-
 
 
 
