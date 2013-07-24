@@ -9,4 +9,18 @@ Edit the script where necessary to add the correct credentials for your mail ser
 
 A bit of info when running this as a cron:
 
-You will need to make sure your cron scripts are running with the environment properly configured. You need to list the GEM_HOME path at the very least in your crontab or the 'mail' gem won't work. It's also a good idea to set $PATH in the crontab to whatever it normally is for that user account.
+You will need to make sure your cron scripts are running with the environment properly configured. You need to list the GEM_HOME path at the very least in your crontab or the 'mail' gem won't work. It's also a good idea to set $PATH in the crontab to whatever it normally is for that user account. 
+
+EXAMPLE:
+
+....
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+GEM_HOME = /var/lib/gems/1.9.1
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+...
+
+etc.
