@@ -6,3 +6,7 @@ Make sure you install the 'mail' gem, found here:
 https://github.com/mikel/mail
 
 Edit the script where necessary to add the correct credentials for your mail server and email addresses.
+
+A bit of info when running this as a cron:
+
+You will need to make sure your cron scripts are running with the environment properly configured. You need to list the GEM_HOME path at the very least in your crontab or the 'mail' gem won't work. It's also a good idea to set $PATH in the crontab to whatever it normally is for that user account.
