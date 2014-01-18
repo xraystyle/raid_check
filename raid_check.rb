@@ -46,6 +46,25 @@ def send_email(error_list)
 
 end
 
+# Narrow problem list to errors/warnings that have occured in the last 24 hours.
+def new_problems(problem_list)
+	current_time = Time.now
+	@recent_problems = ""
+	problem_list = problem_list.split("\n")
+	problem_list.each do |line|
+		t_match = line.match('\[(.*)\]')
+		line_time = Time.parse(t_match[1])
+
+		if current_time - line_time < 86400
+			
+			@recent_problems = @recent_problems + line + "\n"
+			
+		end
+
+	end
+
+end
+
 ############## Start Script ##############
 
 
@@ -53,8 +72,10 @@ get_alarms
 
 find_problems(@alarm_list)
 
-unless @problems.empty?
-	send_email(@problems)
+new_problems(@problems)
+
+unless @recent_problems.empty?
+	send_email(@recent_problems)
 end
 
 
