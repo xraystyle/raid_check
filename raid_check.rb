@@ -1,6 +1,7 @@
 #!/usr/bin/ruby -w
 
 require 'mail'
+require 'time'
 
 # set up email creds
 # edit this with the correct creds for your mail server. 
