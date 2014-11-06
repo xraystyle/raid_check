@@ -3,6 +3,12 @@
 require 'mail'
 require 'time'
 
+@hostname = `hostname`
+
+# Edit these as appropriate. 
+@to_email = "your_email@example.com"
+@from_email = "from_address@example.com"
+
 # set up email creds
 # edit this with the correct creds for your mail server. 
 Mail.defaults do
@@ -39,9 +45,9 @@ end
 def send_email(error_list)
 
 	Mail.deliver do
-	    to 'youremail@example.com'
-	    from 'fromaddress@example.com'
-	    subject 'Raid Errors/Warnings Found On Server "SERVERNAME"'
+	    to @to_email
+	    from @from_email
+	    subject "Raid Errors/Warnings Found On Server \"#{@hostname}\""
 	    body "The following alerts were found in the last 24 hours:\n\n#{error_list}"
     end
 

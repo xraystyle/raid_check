@@ -5,7 +5,7 @@ If you use tw_cli to manage your RAID arrays, this should work for you.
 Make sure you install the 'mail' gem, found here:
 https://github.com/mikel/mail
 
-Edit the script where necessary to add the correct credentials for your mail server and email addresses.
+Edit the script near the top to add the correct credentials for your mail server and email addresses.
 
 A bit of info when running this as a cron:
 
